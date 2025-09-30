@@ -18,7 +18,7 @@ port_counts = defaultdict(set)  # ports per source ip
 packet_counts = defaultdict(int)  # packet counts per source ip
 
 def packet_callback(packet):
-    """process packets and check for threats."""
+    # process packets and check for threats
     if IP in packet and TCP in packet:
         src = packet[IP].src
         dst = packet[IP].dst
@@ -47,7 +47,7 @@ def packet_callback(packet):
             print(f"ALERT: high packet volume from {src} ({packet_counts[src]} packets)")
 
 def save_logs():
-    """save logs to csv."""
+    # save logs to csv
     if logs:
         df = pd.DataFrame(logs)
         df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
