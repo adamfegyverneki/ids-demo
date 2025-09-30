@@ -72,7 +72,7 @@ def generate_report(df):
         print(f"report saved as {REPORT_IMAGE}")
 
 def main():
-    """run the ids."""
+    # run the ids
     print(f"starting ids on interface {INTERFACE} for {TIME_WINDOW} seconds...")
     try:
         # sniff packets
